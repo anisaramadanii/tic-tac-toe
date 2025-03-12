@@ -18,8 +18,6 @@ function deriveActivePlayer(gameTurn) {
 }
 
 function App() {
-  // const [activePlayer, setActivePlayer] = useState("X");
-  // const [hasWinner, sethasWinner] = useState(false);
   const [gameTurn, setGameTurn] = useState([]);
   let gameBoard = initialGameBoard;
 
@@ -33,7 +31,6 @@ function App() {
   const activePlayer = deriveActivePlayer(gameTurn);
 
   function handleSelectSquare(rowIndex, colIndex) {
-    // setActivePlayer((curActivePlayer) => (curActivePlayer === "X" ? "0" : "X"));
     setGameTurn((prevTurn) => {
       const currentPlayer = deriveActivePlayer(prevTurn);
 
@@ -82,13 +79,6 @@ function App() {
           <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
         </div>
         <Log turns={gameTurn} />
-        {/* //Exercise 1 */}
-        {/* <input
-          type="text"
-          value={specialName}
-          onChange={(event) => setSpecialName(event.target.value)}
-        />
-        <p>Hello {specialName}</p> */}
       </main>
     </>
   );

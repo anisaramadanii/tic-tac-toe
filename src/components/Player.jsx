@@ -6,16 +6,9 @@ export default function Player({ initialName, symbol, isActive }) {
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditClick() {
-    setIsEditing((editing) => !editing); // true
+    setIsEditing((editing) => !editing);
   }
-
-  // function handleChange(event) {
-  //   setPlayerName(event.target.value);
-  // }
-
-  let editingName = <span className="player-name">{playerName}</span>; //initial value
-  // let buttonEdit = "Edit";
-
+  let editingName = <span className="player-name">{playerName}</span>; 
   if (isEditing === true) {
     editingName = (
       <input
@@ -25,7 +18,6 @@ export default function Player({ initialName, symbol, isActive }) {
         onChange={(event) => setPlayerName(event.target.value)}
       />
     );
-    // buttonEdit = "Save";
   }
 
   return (
